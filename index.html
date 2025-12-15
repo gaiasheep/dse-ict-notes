@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <title>DSE ICT 5** 筆記庫</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="DSE ICT Revision Notes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* Logo 大小调整 */
+    .sidebar-nav .app-name img { width: 120px; margin: 10px auto; }
+    /* 侧边栏字体微调 */
+    .sidebar-nav li { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div id="app">Loading DSE Notes...</div>
+  <script>
+    window.docsify = {
+      name: 'DSE ICT 備考',
+      repo: '', // 如果想显示 GitHub 角标，填入仓库地址
+      
+      // ✅ 关键修复：使用相对路径，不要加斜杠
+      logo: 'logo.png',
+      nameLink: '#/',  
+      
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      
+      // ✅ 关键修复：开启相对路径模式，解决子目录链接问题
+      relativePath: true,
+
+      search: {
+        placeholder: '🔍 搜尋關鍵詞 (e.g. SQL, GIGO)',
+        noData: '找不到結果',
+        depth: 6
+      },
+      copyCode: {
+        buttonText : 'Copy',
+        errorText  : 'Error',
+        successText: 'Copied'
+      }
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+</body>
+</html>
