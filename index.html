@@ -4,104 +4,41 @@
   <meta charset="UTF-8">
   <title>DSE ICT 5** 筆記庫</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="DSE ICT Revision Notes">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* ✅ 修复 1: 修正 Logo CSS 选择器 */
-    .app-name img { 
-        width: 120px; 
-        margin: 10px auto; 
-        display: block; /* 确保图片居中 */
-    }
-    
-    /* 侧边栏字体微调 */
-    .sidebar-nav li { margin: 5px 0; }
-    
-    /* 侧边栏链接样式优化 */
-    .sidebar-nav ul li a {
-        font-size: 15px;
-        color: #42b983; /* 给必修部分加个显眼的颜色 */
-    }
-    .sidebar-nav ul li ul li a {
-        color: #505d6b; /* 子菜单颜色深一点 */
-        font-size: 14px;
-    }
+    /* 让 Logo 居中且大小合适 */
+    .app-name img { width: 120px; margin: 10px auto; display: block; }
+    /* 侧边栏链接颜色 */
+    .sidebar-nav li a { font-size: 15px; }
   </style>
 </head>
 <body>
-  <div id="app">Loading DSE Notes...</div>
-  
+  <div id="app">Loading...</div>
   <script>
     window.docsify = {
       name: 'DSE ICT 備考',
       repo: '', 
       
-      // Logo 设置
       logo: 'logo.png',
-      nameLink: '#/',  
+      nameLink: '#/',
       
-      // ✅ 修复 2: 关闭自动侧边栏，删除 alias
-      loadSidebar: false,
+      // ✅ 关键设置：告诉 Docsify 加载这个没有下划线的文件
+      loadSidebar: 'sidebar.md',
       
-      subMaxLevel: 3,
+      // ✅ 开启目录层级：这样点击文章后，侧边栏会自动显示文章里的 H2, H3 标题
+      subMaxLevel: 3, 
+      
       auto2top: true,
       relativePath: true,
-
-      // ✅ 修复 3: 增强型菜单插件
-      plugins: [
-        function(hook, vm) {
-          hook.doneEach(function() {
-            // 使用 setTimeout 防止被 Docsify 默认行为覆盖
-            setTimeout(function() {
-                var sidebar = document.querySelector('.sidebar-nav');
-                if (sidebar) {
-                  sidebar.innerHTML = `
-                    <ul>
-                      <li style="margin-bottom: 20px;">
-                        <a href="#/" style="font-weight: bold; font-size: 16px;">🏠 返回首頁</a>
-                      </li>
-                      
-                      <li>
-                        <strong style="display:block; margin-top:10px; color: #333;">🟢 必修部分 (Compulsory)</strong>
-                        <ul style="margin-left: 10px;">
-                          <li><a href="#/compulsory/module_a_summary.md">Module A: 資訊處理</a></li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        <strong style="display:block; margin-top:20px; color: #333;">🔗 實用資源</strong>
-                        <ul style="margin-left: 10px;">
-                          <li><a href="https://gaiasheep.github.io/ICT_Grade_Predictor_EN/" target="_blank">ICT Grade Predictor</a></li>
-                          <li><a href="https://dse.rioho.dev/countdown" target="_blank">DSE 2026 Countdown</a></li>
-                          <li><a href="https://www.hkeaa.edu.hk/en/hkdse/assessment/subject_information/category_a_subjects/hkdse_subj.html?A2&ID=17" target="_blank">Past Paper Briefing</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  `;
-                }
-            }, 100); // 延时 100 毫秒执行
-          });
-        }
-      ],
-
-      search: {
-        placeholder: '🔍 搜尋筆記...',
-        noData: '找不到結果',
-        depth: 6
-      },
-      copyCode: {
-        buttonText : 'Copy',
-        errorText  : 'Error',
-        successText: 'Copied'
-      }
+      
+      search: 'auto',
+      copyCode: { buttonText : 'Copy', errorText : 'Error', successText: 'Copied' }
     }
   </script>
-  
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
 </body>
