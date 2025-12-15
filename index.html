@@ -25,7 +25,7 @@
       logo: 'logo.png',
       nameLink: '#/',  
       
-      loadSidebar: 'sidebar.md',
+      loadSidebar: false,
       // 确保有这段 alias，这能防止在子页面找不到侧边栏
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
@@ -36,7 +36,38 @@
       
       // ✅ 关键修复：开启相对路径模式，解决子目录链接问题
       relativePath: true,
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            // 找到侧边栏容器
+            var sidebar = document.querySelector('.sidebar-nav');
+            if (sidebar) {
+              // 直接把 HTML 菜单写在这里
+              sidebar.innerHTML = `
+                <ul>
+                  <li><a href="#/" style="font-weight: bold;">🏠 返回首頁</a></li>
+                  
+                  <li>
+                    <strong style="display:block; margin-top:10px;">🟢 必修部分 (Compulsory)</strong>
+                    <ul style="margin-left: 10px;">
+                      <li><a href="#/module_a_summary.md">Module A: 資訊處理</a></li>
+                    </ul>
+                  </li>
 
+                  <li>
+                    <strong style="display:block; margin-top:10px;">🔗 實用資源</strong>
+                    <ul style="margin-left: 10px;">
+                      <li><a href="https://gaiasheep.github.io/ICT_Grade_Predictor_EN/" target="_blank">ICT Grade Predictor</a></li>
+                      <li><a href="https://dse.rioho.dev/countdown" target="_blank">DSE 2026 Countdown</a></li>
+                      <li><a href="https://www.hkeaa.edu.hk/en/hkdse/assessment/subject_information/category_a_subjects/hkdse_subj.html?A2&ID=17" target="_blank">Past Paper Briefing</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              `;
+            }
+          });
+        }
+      ],
       search: {
         placeholder: '🔍 搜尋關鍵詞 (e.g. SQL, GIGO)',
         noData: '找不到結果',
