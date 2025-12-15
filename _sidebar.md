@@ -1,4 +1,4 @@
-* [🏠 首頁](README.md)
+[🏠 首頁](README.md)
 
 * 🟢 必修部分 (Compulsory)
   * [Module A: 資訊處理](compulsory/module_a.md)
