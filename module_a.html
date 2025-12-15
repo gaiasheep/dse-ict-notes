@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module A: Information Processing | DSE ICT</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🎓 DSE ICT Prep</div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="module_a.html" class="active"><i class="fas fa-book"></i> Module A</a></li>
+                <li><a href="index.html#resources"><i class="fas fa-link"></i> Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Module A: Information Processing</h1>
+            <p class="subtitle">資訊處理</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <div class="container">
+            <aside class="sidebar">
+                <h3>Quick Navigation</h3>
+                <ul class="toc-links">
+                    <li><a href="#section1"><i class="fas fa-sync"></i> Data Processing Cycle</a></li>
+                    <li><a href="#section2"><i class="fas fa-binary"></i> Data Representation</a></li>
+                    <li><a href="#section3"><i class="fas fa-database"></i> Database & SQL</a></li>
+                    <li><a href="#section4"><i class="fas fa-table"></i> Spreadsheet</a></li>
+                </ul>
+            </aside>
+
+            <article class="main-content">
+                <div class="intro-box">
+                    <p>This module covers the journey from raw data to meaningful information, including how data is represented, processed, and managed.</p>
+                    <p><em>本單元涵蓋從原始數據到有意義資訊的過程，包括數據的表達、處理和管理。</em></p>
+                </div>
+
+                <!-- Section 1: Data Processing Cycle -->
+                <section id="section1" class="content-section">
+                    <h2>1. Data Processing Cycle <span class="chinese">(數據處理週期)</span></h2>
+                    
+                    <h3>Data vs. Information</h3>
+                    <div class="definition-box">
+                        <div class="def-item">
+                            <h4><i class="fas fa-database"></i> Data (數據)</h4>
+                            <p>Raw facts and figures. No context. (e.g., "170", "M")</p>
+                            <p class="chinese">原始的事實和數字，沒有語境。</p>
+                        </div>
+                        <div class="def-item">
+                            <h4><i class="fas fa-info-circle"></i> Information (資訊)</h4>
+                            <p>Processed data that is meaningful and useful for decision making.</p>
+                            <p class="chinese">經處理的數據，對決策有意義且有用。</p>
+                        </div>
+                    </div>
+
+                    <h3>The GIGO Principle</h3>
+                    <div class="highlight-box keyword">
+                        <p><strong>Marking Scheme Keyword:</strong> <span class="keyword-tag">GIGO (Garbage In, Garbage Out)</span></p>
+                        <p><strong>Definition:</strong> If the input data is incorrect (garbage), the output information will also be incorrect, regardless of how perfect the processing is.</p>
+                        <p class="chinese">定義: 如果輸入數據不正確（垃圾），無論處理過程多麼完美，輸出的資訊也會是不正確的。</p>
+                    </div>
+
+                    <h3>Data Control: Verification vs. Validation <span class="chinese">(數據控制)</span></h3>
+                    <div class="alert-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>This is a <strong>frequent exam question</strong>. You must distinguish them clearly.</p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Data Verification (數據核對)</th>
+                                    <th>Data Validation (數據有效性檢驗)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Definition</strong></td>
+                                    <td>Ensuring data is copied correctly from the source.</td>
+                                    <td>Ensuring data is reasonable and follows rules.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>中文定義</strong></td>
+                                    <td>確保數據從源頭正確複製（由人或系統核對）。</td>
+                                    <td>確保數據合理並符合既定規則（由電腦系統執行）。</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Methods</strong></td>
+                                    <td>
+                                        • <strong>Double Entry</strong> (輸入兩次)<br>
+                                        • <strong>Visual Check</strong> (目測檢查)
+                                    </td>
+                                    <td>
+                                        • <strong>Range Check</strong> (範圍檢查)<br>
+                                        • <strong>Format Check</strong> (格式檢查)<br>
+                                        • <strong>Check Digit</strong> (檢驗數位)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Example</strong></td>
+                                    <td>Typing a new password twice.</td>
+                                    <td>Checking if <code>Age</code> is between 0 and 120.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="note-box">
+                        <p><strong>Crucial Note:</strong> <span class="keyword-tag">Parity Check (奇偶檢測)</span> is used to detect errors <em>during transmission</em>, not user input errors.</p>
+                        <p class="chinese">注意: 奇偶檢測用於偵測傳輸過程中的錯誤，而非用戶輸入錯誤。</p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Data Representation -->
+                <section id="section2" class="content-section">
+                    <h2>2. Data Representation <span class="chinese">(數據表達)</span></h2>
+                    
+                    <h3>Number Systems <span class="chinese">(數系)</span></h3>
+                    <ul class="styled-list">
+                        <li><strong>Binary (二進制):</strong> Base 2 (0, 1). Used by computers.</li>
+                        <li><strong>Hexadecimal (十六進制):</strong> Base 16 (0-9, A-F).
+                            <ul>
+                                <li><em>Use:</em> Simplifies binary representation for humans (shorthand). Easy conversion (4 bits = 1 hex digit).</li>
+                                <li class="chinese">用途: 簡化二進制表達（速記），方便人類閱讀。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Representing Negative Integers <span class="chinese">(負整數)</span></h3>
+                    <p>We use <strong>Two's Complement (二補碼)</strong>.</p>
+                    <ol class="styled-list">
+                        <li>Invert all bits (0→1, 1→0). (One's Complement)</li>
+                        <li>Add 1.</li>
+                    </ol>
+                    <div class="formula-box">
+                        <p><strong>Range (n-bit):</strong> \(-2^{n-1}\) to \(+2^{n-1}-1\)</p>
+                        <p><strong>Overflow Error (溢出誤差):</strong> Occurs when the result of a calculation exceeds the storage capacity allocated. (e.g., adding two large positive numbers results in a negative number).</p>
+                    </div>
+
+                    <h3>Character Coding <span class="chinese">(字符編碼)</span></h3>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Coding System</th>
+                                    <th>Description</th>
+                                    <th>Size</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ASCII</strong></td>
+                                    <td>English characters only.</td>
+                                    <td>1 byte (7 bits used)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Big5 (大五碼)</strong></td>
+                                    <td>Traditional Chinese (Hong Kong/Taiwan).</td>
+                                    <td>2 bytes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>GB (國標碼)</strong></td>
+                                    <td>Simplified Chinese (Mainland China).</td>
+                                    <td>2 bytes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Unicode (統一碼)</strong></td>
+                                    <td>International standard (All languages).</td>
+                                    <td>Variable (UTF-8)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multimedia: Bitmap vs. Vector Graphics</h3>
+                    <div class="tip-box">
+                        <p><strong>Exam Tip:</strong> Always compare "File Size" and "Scalability".</p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Bitmap / Raster (點陣圖)</th>
+                                    <th>Vector Graphics (向量圖)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Composition</strong></td>
+                                    <td>Made of <strong>Pixels (像素)</strong>.</td>
+                                    <td>Made of <strong>Mathematical formulas</strong> (lines, curves).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scaling</strong></td>
+                                    <td><strong>Jagged/Pixelated (起格)</strong> when zoomed in.</td>
+                                    <td><strong>No quality loss (不失真)</strong> when resized.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>File Size</strong></td>
+                                    <td>Large (depends on resolution & color depth).</td>
+                                    <td>Small (depends on complexity of image).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Examples</strong></td>
+                                    <td>Photos (.JPG, .PNG, .BMP)</td>
+                                    <td>Logos, Architectural drawings (.SVG, .AI)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>File Size Calculation Formulas <span class="chinese">(必背公式)</span></h4>
+                    <div class="formula-box">
+                        <div class="formula-item">
+                            <p><strong>1. Image Size:</strong></p>
+                            <p>$$\text{Resolution (width} \times \text{height)} \times \text{Color Depth (bits)}$$</p>
+                            <p class="note"><em>(Remember to convert bits to bytes by dividing by 8)</em></p>
+                        </div>
+                        <div class="formula-item">
+                            <p><strong>2. Audio Size:</strong></p>
+                            <p>$$\text{Sampling Rate (Hz)} \times \text{Sample Size (bits)} \times \text{Channels} \times \text{Time (s)}$$</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Database & SQL -->
+                <section id="section3" class="content-section">
+                    <h2>3. Database <span class="chinese">(數據庫)</span> & SQL</h2>
+                    
+                    <h3>Key Concepts</h3>
+                    <ul class="styled-list">
+                        <li><strong>Primary Key (主關鍵碼):</strong> A field that uniquely identifies each record. Cannot be NULL. (e.g., StudentID).</li>
+                        <li><strong>Foreign Key (外鍵碼):</strong> A field that links to the Primary Key of another table.</li>
+                    </ul>
+
+                    <h3>SQL Cheat Sheet <span class="chinese">(SQL 速查表)</span></h3>
+                    <p>Based on the provided notes, here is the standard structure:</p>
+
+                    <div class="code-box">
+                        <pre><code>SELECT Field1, Field2, ...    -- Specify columns (DISTINCT removes duplicates)
+FROM TableName                -- Specify table
+WHERE Condition               -- Filter records (e.g., Age > 18)
+GROUP BY Field                -- Group records for calculation
+ORDER BY Field [ASC/DESC]     -- Sort results (ASC=Ascending, DESC=Descending)</code></pre>
+                    </div>
+
+                    <h4>Common Operators & Functions</h4>
+                    <ul class="styled-list">
+                        <li><strong>Text Matching:</strong> <code>LIKE 'K%'</code> (Starts with K), <code>LIKE '%A%'</code> (Contains A).
+                            <ul>
+                                <li><em>Note:</em> In DSE, <code>%</code> is the wildcard for multiple characters, <code>_</code> is for a single character.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Range:</strong> <code>BETWEEN 10 AND 20</code></li>
+                        <li><strong>Null Check:</strong> <code>IS NULL</code>, <code>IS NOT NULL</code></li>
+                        <li><strong>Aggregate Functions (統計函數):</strong>
+                            <ul>
+                                <li><code>COUNT(*)</code>: Count all records.</li>
+                                <li><code>SUM(Field)</code>: Total sum.</li>
+                                <li><code>AVG(Field)</code>: Average.</li>
+                                <li><code>MAX(Field)</code> / <code>MIN(Field)</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 4: Spreadsheet -->
+                <section id="section4" class="content-section">
+                    <h2>4. Spreadsheet <span class="chinese">(電子試算表)</span></h2>
+                    
+                    <h3>Essential Functions <span class="chinese">(常用函數)</span></h3>
+                    
+                    <div class="function-box">
+                        <h4><code>=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code></h4>
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Set the last parameter to <code>FALSE (0)</code> for <strong>Exact Match</strong>. This is required for IDs or Codes.</p>
+                            <p class="chinese">提示: 最後一個參數設為 FALSE (0) 代表準確配對，常用於學號或編碼查詢。</p>
+                        </div>
+                    </div>
+
+                    <div class="function-box">
+                        <h4><code>=IF(condition, value_if_true, value_if_false)</code></h4>
+                        <p>Can be nested (e.g., <code>IF(..., IF(..., ...))</code>) for grading systems.</p>
+                    </div>
+
+                    <div class="function-box">
+                        <h4><code>=COUNTIF(range, criteria)</code> / <code>=SUMIF(range, criteria, [sum_range])</code></h4>
+                    </div>
+
+                    <h3>Pivot Table <span class="chinese">(樞紐分析表)</span></h3>
+                    <ul class="styled-list">
+                        <li>Used for <strong>Data Analysis</strong> (summarizing large datasets).</li>
+                        <li>Does <strong>not change</strong> the original data.</li>
+                        <li><strong>Key areas:</strong> Filter (Page), Columns, Rows, Values (Data).</li>
+                    </ul>
+                </section>
+
+                <!-- Back to Top Button -->
+                <div class="back-to-top">
+                    <a href="#" class="btn-primary"><i class="fas fa-arrow-up"></i> Back to Top</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Last Update: 2025-12-15 | Created by <strong>Gaia</strong></p>
+            <p>© 2025 DSE ICT Prep Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
